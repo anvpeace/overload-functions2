@@ -2,10 +2,10 @@
 
 using namespace std;
 
-void addition(double, double);
-void addition(double, double, double);
-void addition(double, double, double, double);
-void addition(double, double, double, double, double);
+void addition(double, double[5]);
+void addition(double(var[5]), double(var2[5]), double(var3[5]));
+void addition(double(var[5]), double(var2[5]), double(var3[5]), double(var4[5]));
+void addition(double(var[5]), double(var2[5]), double(var3[5]), double(var4[5]), double(var5[5]));
 
 
 
@@ -14,16 +14,19 @@ int main (){
 
     double number1;
     double number2[5];
-    double var1;
-    double var2;
-    double var3;
-    double var4;
-    double var5;
+    int switchNum;
+    double var[5];
+    double var2[5];
+    double var3[5];
+    double var4[5];
+    double var5[5];
 
     // Write a program that asks the user how many values should get added together (from 2 to 5).
         cout << "How many values do you want added?" << endl;
     // Then the user should input those numbers.
         cin >> number1;
+
+        switchNum = number1;
         // cin >> number2;
 
 
@@ -35,40 +38,57 @@ int main (){
         for(int i = 1; i <= number1; i++){
             cout << "Input number " << i << endl;
             cin >> number2[i];
+
+
+            for(int j = 0;  j < number2[i]; j++){
+                var[0] = number2[1];
+                var2[0] = number2[2];
+                var3[0] = number2[3];
+                var4[0] = number2[4];
+                var5[0] = number2[5];
+
+            }
+
         }
+
+        
+        cout << endl;
 
     //  Write a function "addition" that takes two double
     // parameters and adds them together, printing out in the console the calculation.
-        // addition(number1, number2);
-
+    //   addition(number1, number2);
 
 
     //  Furthermore
-// overload the "addition" function 3 times so it takes three parameters, four parameters and
-// five parameters adding those parameters in each case.
-
-
-    //  addition(var1, var2, var3);
-
-
-
-    
-
-
+    // overload the "addition" function 3 times so it takes three parameters, four parameters and
+    // five parameters adding those parameters in each case.
+        // addition(var, var2, var3);
+        // addition(var, var2, var3, var4);
+        // addition(var, var2, var3, var4, var5);
 
     // Prepare a switch that uses the version
     // of addition function with as many parameters as the user inputted at the beginning.
-    // switch (expression)
-    // {
-    // case /* constant-expression */:
-    //     /* code */
-    //     break;
-    
-    // default:
-    //     break;
-    // }
 
+     switch (switchNum){
+    case 2:
+              addition(number1, number2);
+        break;
 
+    case 3:
+            addition(var, var2, var3);
+        break;
+
+    case 4:
+            addition(var, var2, var3, var4);
+        break;
+
+    case 5:
+            addition(var, var2, var3, var4, var5);
+        break;
+
+    default:
+        break;
+    }
 
 
     return 0;
@@ -76,25 +96,36 @@ int main (){
 
 //  Write a function "addition" that takes two double
 // parameters and adds them together, printing out in the console the calculation.
-// void addition(double number1, double number2){
-//     cin >> number2;
-//     cout << number1 + number2 << endl;
-// }
+void addition(double number1, double number2[5]){
 
-// void addition(double var1, double var2, double var3){
+   cout << endl;
+    
+    cout << number1 << " + " << number2[1] << " = " << number1 + number2[1] << endl;
+}
 
-//     cin >> var1;
-//     cin >> var2;
-//     cin >> var3;
+void addition(double var[5], double var2[5], double var3[5]){
 
-//     cout << var1 + var2 + var3 << endl;
+   cout << endl;
 
+   cout << var[0] << " + " << var2[0] << " + " << var3[0] << " = " << (var[0] + var2[0] + var3[0]) << endl;
+ 
+}
 
-// }
+void addition(double(var[5]), double(var2[5]), double(var3[5]), double(var4[5])){
 
+   cout << endl;
 
-//  Prepare a switch that uses the version
-// of addition function with as many parameters as the user inputted at the beginning.
+   cout << var[0]<< " + " << var2[0] << " + " << var3[0]<< " + " << var4[0]<< " = " << (var[0] + var2[0] + var3[0] + var4[0]) << endl;
+ 
+}
+
+void addition(double(var[5]), double(var2[5]), double(var3[5]), double(var4[5]), double(var5[5])){
+
+   cout << endl;
+
+   cout << var[0]<< " + " << var2[0] << " + " << var3[0]<< " + " << var4[0]<< " + "<< var5[0] <<" = " << (var[0] + var2[0] + var3[0] + var4[0] + var5[0]) << endl;
+ 
+}
 
 // eg.
 
